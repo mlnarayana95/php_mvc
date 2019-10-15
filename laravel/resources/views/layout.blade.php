@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:700" rel="stylesheet">
-  <title>Funflix</title>
+  <title></title>
   <link rel="icon" href="images/apple-touch-icon.png" />
   <link rel="apple-touch-icon" sizes="57x57" href="images/android-chrome-57x57.png" />
   <link rel="apple-touch-icon" sizes="72x72" href="images/android-chrome-72x72.png" />
@@ -40,8 +40,12 @@
     .vids{
       max-width: 100%;
     }
-    
+
+
   </style>
+
+
+  @yield('style')
 </head>
 <body>
   <div id="container">
@@ -55,7 +59,7 @@
           <li class="current"><a href="/">HOME</a></li>
           <li><a href="/tvshows">TV SHOWS</a></li>
           <li><a href="/movies">MOVIES</a></li>
-          <li><a href="/my_profile">MY PROFILE</a></li>
+          <li><a href="/myprofile">MY PROFILE</a></li>
         </ul>
       </nav> 
       <div id="header_button">

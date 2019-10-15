@@ -10,27 +10,31 @@ class PagesController extends Controller
     {
     	$slug = 'home';
     	$title = 'Funflix - Home Page';
-    	return view('home',compact('slug','title'));
+    	$subtitle = 'Displaying latest tv shows and movies';
+    	return view('home',compact('slug','title','subtitle'));
     }
 
     public function tvshows()
     {
     	$slug = 'tvshows';
     	$title = 'Funflix - TV Shows';
-    	return view('tvshows',compact('slug','title'));
+    	$subtitle = 'Displaying latest tv shows';
+    	return view('tvshows',compact('slug','title','subtitle'));
     }
 
     public function movies()
     {
     	$slug = 'movies';
     	$title = 'Funflix - Movies';
-    	return view('movies',compact('slug','title'));
+    	$subtitle = 'Displaying latest movies';
+    	return view('movies',compact('slug','title','subtitle'));
     }
 
     public function myprofile()
     {
     	$slug = 'myprofile';
     	$title = 'Funflix - My profile';
-    	return view('myprofile',compact('slug','title'));
+    	$subtitle = 'Displaying user information';
+    	return view('myprofile',compact('slug','title','subtitle'));
     }
 }

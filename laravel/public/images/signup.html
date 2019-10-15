@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Funflix - SignUp</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:700" rel="stylesheet">
+    <script src="ie.js"></script>
+    <link rel="icon" href="images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="images/android-chrome-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="images/android-chrome-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png" />
+    <link rel="stylesheet" href="styles/desktop.css" />
+    <link rel="stylesheet" href="styles/mobile.css" />
+    <style>
+ 
+      /* styles for body */  
+      body{
+        background: none;
+        -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+        -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+        -o-animation: fadein 2s; /* Opera < 12.1 */
+        animation: fadein 2s;
+      }
+      
+
+      /* Firefox < 16 */
+      @-moz-keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
+
+      /* Safari, Chrome and Opera > 12.1 */
+      @-webkit-keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
+
+      /* Internet Explorer */
+      @-ms-keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
+
+      /* Opera < 12.1 */
+      @-o-keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
+      
+      @keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
+
+      /* starts: header */ 
+      header{
+          box-shadow: 0px 0px 15px 0px #000;
+       }
+    
+      footer{
+        position:relative;
+      }
+      
+      footer p{
+        padding-top: 14px;
+      }    
+      /* ends: footer */
+      
+    </style>
+    
+    <!-- condition to apply styles only for IE versions less than or equal to 8 -->
+    <!--[if LTE IE 8]>
+      <script type="text/javascript" src="ie.js"></script>
+      <link rel="stylesheet" type="text/css" href="ie.css" />
+    <![endif]-->
+    
+    </head>
+    <body>   
+      <div id="container">
+        <header> <!-- header section starts -->
+          <span id="logo">
+            <img id="landing_logo" style="height:50px;" src="images/logo.png" alt="logo">
+          </span>
+          <div id="header_button_signup">
+            <a href="login.html" class="btn1">Sign In</a>
+          </div>
+          <h1 style="padding-left: 38px;">Funflix - SignUp</h1>
+        </header> <!-- header section ends -->
+        <main>
+        <div id="wrapper"> <!-- 960px width to wrap a page -->
+  
+          <form id="sign_up" name="sign_up" method="post" action="http://www.scott-media.com/test/form_display.php" autocomplete="on" >
+            <fieldset> 
+              <legend>Personal Info</legend>
+              <p>    
+                <label for="first_name">First Name</label>
+                <input type="text" name="first_name" id="first_name" maxlength="40" size="25" required placeholder="Type your first name" />
+              </p>
+              <p>
+                <label for="last_name">Last Name</label>
+                <input type="text" name="last_name" id="last_name" maxlength="40" size="25" placeholder="Type your last name" />
+              </p>
+              <p>
+                <label for="username">User Name</label>
+                <input type="text" id="username" name="username" maxlength="16" title="Username cannot be more than 16 characters" size="16" placeholder="User name" required />
+              </p>
+              <p>
+                <label for="pass">Password</label>
+                <input style="" type="password" id="pass" name="pass" maxlength="40" size="25"  required />
+              </p>
+              <p>
+                <label for="email_address">Email</label>
+                <input type="email" name="email_address" id="email_address" required />
+              </p>
+              <p>
+                <label for="phone">Phone Number</label>
+                <input type="tel" name="phone" id="phone" />
+              </p>
+              <p>
+                <label for="birthday">Birthday</label>
+                <input type="date" name="birthday" id="birthday" />
+              </p>
+              <p>
+                <label>Country</label>
+                <input list="country" name="country" placeholder="Country" />
+                <datalist id="country">
+                  <option value="Canada"></option>
+                  <option value="USA"></option>
+                  <option value="India"></option>
+                  <option value="Moldova"></option>
+                  <option value="Columbia"></option>
+                  <option value="Brazil"></option>
+                  <option value="Other"></option>
+                </datalist>
+              </p>
+            </fieldset>
+            <p id="buttons">
+              <a href="home.html" class="btn1">Sign Up</a>
+              <input style="padding-top: 9px;
+              width: 100px;                 border-radius: 8px;
+              " class="btn1" type="reset" value="Clear" /> &nbsp;
+            </p>
+          </form>
+        </div>
+        </main>
+        <footer> <!-- footer section starts -->
+          <p>Copyright &copy; 2019 - Funflix Services Inc. All rights reserved.</p>
+        </footer> <!-- footer section ends -->
+    </div>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+/* CSS for IE 8 or lower that is already included in the conditonal comment in main HTML file */
+
+header,
+footer,
+nav,
+main,
+section,
+article,
+aside {
+  display: block;
+}
+
+.modal-window>div{
+  display: none;
+}
+
+span#bgimage{
+  background-image: url(alpha-logo_resize.png);
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 4px;
+}

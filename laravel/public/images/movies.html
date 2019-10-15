@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:700" rel="stylesheet">
+  <title>Funflix - Movies</title>
+  <link rel="icon" href="images/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="images/android-chrome-57x57.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="images/android-chrome-72x72.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png" />
+  <link rel="stylesheet" href="styles/desktop.css" />
+  <link rel="stylesheet" href="styles/mobile.css" />
+  <style>
+  body{
+    background: radial-gradient(#212121 , #000);
+    background-size: cover;
+    background-attachment: fixed;
+    opacity: 0.9;
+    margin: 0 auto;
+    font-family: 'Josefin Sans', Arial, sans-serif; /* google fonts with fallback */  
+    }
+    
+    
+    #wrapper{
+      margin: 0 auto;
+      width: 960px;
+    }
+    
+    #comedies_vids, #trending_now_vids{
+      margin-top: -26px;
+    }
+    
+    #comedies{
+      margin-top: -26px;
+      padding-top: 10px;
+      clear: both;
+    }
+    
+    footer{
+      height: 40px;
+      font-size: 12px;
+      background-color: #000;
+      color: #fff;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+    }
+      
+    footer p{
+      text-align: center;
+    } 
+    </style>
+</head>
+<body>
+  <div id="container">
+    <header>
+      <span id="logo">
+        <img id="landing_logo" src="images/logo.png" alt="logo">
+      </span>
+      <nav>
+        <a id="menu-toggle" href="#navlist"><img src="images/menu-white.png" alt="menu toggle" /></a> <!-- starts navigation -->
+        <ul>
+          <li><a href="home.html">HOME</a></li>
+          <li><a href="tvshows.html">TV SHOWS</a></li>
+          <li class="current"><a href="movies.html">MOVIES</a></li>
+          <li><a href="my_profile.html">MY PROFILE</a></li>
+        </ul>
+      </nav> 
+      <div id="header_button">
+        <a href="login.html" class="btn1">Sign Out</a>
+      </div>
+    </header>
+    <div id="wrapper">
+    <main>
+    <div id="trending_now">
+      <h2>Thriller</h2>
+      <div id="trending_now_vids">
+        <div class="zoom" id="box1"><img src="images/Friends.jpg" alt="Thriller Video"></div>  
+        <div class="zoom" id="box2"><img src="images/sherlock.jpg" alt="Thriller Video"></div>  
+        <div  class="zoom" id="box3"><img src="images/houseofcards.jpg" alt="Thriller Video"></div>  
+        <div class="zoom" id="box4"><img src="images/arrow.jpg" alt="Thriller Video"></div>  
+        <div class="zoom" id="box5"><img src="images/blackmirror.jpg" alt="Thriller Video"></div>  
+      </div>
+    </div>
+    <div id="comedies">
+        <h2>Crime</h2>
+        <div id="comedies_vids">
+        <div class="zoom1" id="box6"><img src="images/office.jpg" alt="Crime Video"></div>  
+        <div class="zoom1" id="box7"><img src="images/narcos.jpg" alt="Crime Video"></div> 
+        <div class="zoom1" id="box8"><img src="images/patriotact.jpg" alt="Crime Video"></div>  
+        <div class="zoom1" id="box9"><img src="images/Daredevil3.jpg" alt="Crime Video"></div>  
+        <div class="zoom1" id="box10"><img src="images/got.jpg" alt="Crime Video"></div>  
+        </div>
+    </div>
+    </main>
+    </div>
+    <footer> <!-- footer section starts -->
+      <p>Copyright &copy; 2019 - Funflix Services Inc. All rights reserved.</p>
+    </footer> <!-- footer section ends -->
+  </div>
+</body>
+</html>

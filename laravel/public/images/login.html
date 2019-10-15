@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
+  <title>Funflix - Login</title>
+  <link rel="icon" href="images/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="images/android-chrome-57x57.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="images/android-chrome-72x72.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png" />
+  <link rel="stylesheet" href="styles/desktop.css" />
+  <link rel="stylesheet" href="styles/mobile.css" />
+  <style>
+    h1{
+      color: #fff;
+      font-family: Tahoma, sans-serif;
+     }  
+  </style>
+</head>
+<body>
+  <div id="container">
+    <header>
+      <span id="logo">
+        <img id="landing_logo" src="images/logo.png" alt="logo">
+      </span>
+    </header>
+    <main>
+    <div id="login_form">
+      <h1>Sign In</h1>
+      <div id="content">
+        <form id="login" action="home.html">
+          <p>
+          <input id="email_address" name="email_address" type="email" placeholder="Email" required />
+          </p>
+          <p>
+          <input id="pass" name="pass" type="password" placeholder="Password" required /> 
+          </p>   
+          <p> 
+           <input type="submit" id="login_submit" name="login_submit" value="Submit"/>  
+          </p>
+          <p>
+          <input type="checkbox" name="remember_me" id="remember_me" />
+          <label id="lbl_remember">Remember me</label> 
+          </p> 
+          <p style=" margin-top:30px;color:#f3f3f3">
+            Not a user yet? Sign Up
+          </p>     
+        </form>
+      </div> 
+    </div>
+    </main>
+    <footer> <!-- footer section starts -->
+      <p>Copyright &copy; 2019 - Funflix Services Inc. All rights reserved.</p>
+    </footer> <!-- footer section ends -->
+  </div>
+</body>
+</html>

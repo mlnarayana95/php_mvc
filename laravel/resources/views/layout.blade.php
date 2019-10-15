@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:700" rel="stylesheet">
-  <title></title>
+  <title>{{ $title }} </title>
   <link rel="icon" href="images/apple-touch-icon.png" />
   <link rel="apple-touch-icon" sizes="57x57" href="images/android-chrome-57x57.png" />
   <link rel="apple-touch-icon" sizes="72x72" href="images/android-chrome-72x72.png" />
@@ -56,10 +56,10 @@
       <nav id="navlist">
         <a id="menu-toggle" href="#navlist"><img src="images/menu-white.png" width="50" height="34" alt="menu toggle" /></a> <!-- starts navigation -->
         <ul>
-          <li class="current"><a href="/">HOME</a></li>
-          <li><a href="/tvshows">TV SHOWS</a></li>
-          <li><a href="/movies">MOVIES</a></li>
-          <li><a href="/myprofile">MY PROFILE</a></li>
+          <li class="@if($slug=='home') current @endif"><a href="/">HOME</a></li>
+          <li class="@if($slug=='tvshows') current @endif"><a href="/tvshows">TV SHOWS</a></li>
+          <li class="@if($slug=='movies') current @endif"><a href="/movies">MOVIES</a></li>
+          <li class="@if($slug=='myprofile') current @endif"><a href="/myprofile">MY PROFILE</a></li>
         </ul>
       </nav> 
       <div id="header_button">

@@ -25,7 +25,7 @@ class CreateVidCollectionsTable extends Migration
             $table->string('image');
             $table->integer('length');
             $table->string('director');
-            $table->integer('num_of_season',4);
+            $table->integer('num_of_season')->length(4)->unsigned();
             $table->date('release_date');
             $table->timestamps();
 

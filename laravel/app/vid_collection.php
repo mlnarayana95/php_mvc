@@ -15,4 +15,9 @@ class vid_collection extends Model
     {
     	return self::orderBy('release_date','DESC')->get();
     }
+
+    public static function getVideo($video_id)
+    {	
+    	return self::where('video_id',$video_id)->firstOrFail();
+    }
 }

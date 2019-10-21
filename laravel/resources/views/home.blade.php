@@ -11,7 +11,7 @@
           @foreach($videos as $video)
             <div>
                 <a style="color:#fff;" 
-                href="detailedview.php?id={{ $video['video_id'] }} ">
+                href="/video/{{ $video['video_id'] }}">
                 <img src="/images/{{ $video['image'] }}.jpg?>" 
                 alt="{{ $video['title'] }}"/>
                 <p style="width:192px">{{ $video['title'] }} </p>

@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use Carbon\carbon;
+
 class vid_collection_seeder extends Seeder
 {
     /**
@@ -11,7 +13,7 @@ class vid_collection_seeder extends Seeder
      */
     public function run()
     {
-        DB::table('vid_collection')->insert([
+        DB::table('vid_collections')->insert([
         	'title' => 'Will & Grace',
         	'video_type' => 'TVSHOW',
         	'language' => 'english',
@@ -26,10 +28,12 @@ class vid_collection_seeder extends Seeder
             'length' => 22,
             'director' =>'James Burrows',
             'num_of_season' => 10,
-            'release_date' => '1998-09-21 00:00:00'
+            'release_date' => '1998-09-21 00:00:00',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
         ]);
 
-        DB::table('vid_collection')->insert([
+        DB::table('vid_collections')->insert([
         	'title' => 'Silicon Valley',
         	'video_type' => 'TVSHOW',
         	'language' => 'english',
@@ -42,10 +46,12 @@ class vid_collection_seeder extends Seeder
             'length' => 28,
             'director' =>'John Altschuler',
             'num_of_season' => 5,
-            'release_date' => '2014-04-06 00:00:00'
+            'release_date' => '2014-04-06 00:00:00',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
         ]);
 
-        DB::table('vid_collection')->insert([
+        DB::table('vid_collections')->insert([
         	'title' => 'The Daily Show',
         	'video_type' => 'TVSHOW',
         	'language' => 'english',
@@ -60,11 +66,13 @@ class vid_collection_seeder extends Seeder
             'length' => 22,
             'director' =>'Paul Pennolino',
             'num_of_season' => 24,
-            'release_date' => '1995-10-08 00:00:00'
+            'release_date' => '1995-10-08 00:00:00',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
         ]);
 
 
-        DB::table('vid_collection')->insert([
+        DB::table('vid_collections')->insert([
         	'title' => 'How to Get Away with Murder',
         	'video_type' => 'TVSHOW',
         	'language' => 'english',
@@ -77,12 +85,14 @@ class vid_collection_seeder extends Seeder
             'length' => 43,
             'director' =>'Peter Nowalk',
             'num_of_season' => 24,
-            'release_date' => '2014-09-25 00:00:00'
+            'release_date' => '2014-09-25 00:00:00',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
         ]);
 
 
 
-        DB::table('vid_collection')->insert([
+        DB::table('vid_collections')->insert([
         	'title' => 'Suits',
         	'video_type' => 'TVSHOW',
         	'language' => 'english',
@@ -94,23 +104,101 @@ class vid_collection_seeder extends Seeder
             'length' => 44,
             'director' =>'Aaron Korsh',
             'num_of_season' => 8,
-            'release_date' => '2011-06-23 00:00:00'
+            'release_date' => '2011-06-23 00:00:00',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
         ]);
 
 
-        DB::table('vid_collection')->insert([
-        	'title' => 'Suits',
+        DB::table('vid_collections')->insert([
+        	'title' => 'Stranger Things',
         	'video_type' => 'TVSHOW',
         	'language' => 'english',
-        	'rating' => 8.5,
-        	'synopsis' => 'Big-time Manhattan corporate lawyer Harvey Specter and his team',
-            'plot' =>'On the run from a drug deal gone bad, Mike Ross, a brilliant college dropout,
-             finds himself a job working with Harvey Specter, one of New York City\'s best lawyers.',
-            'image' =>'suits',
-            'length' => 44,
-            'director' =>'Aaron Korsh',
-            'num_of_season' => 8,
-            'release_date' => '2011-06-23 00:00:00'
+        	'rating' => 8.9,
+        	'synopsis' => 'This thrilling Netflix original drama',
+            'plot' => 'This thrilling Netflix original drama ,  When a young boy disappears, 
+        	his mother, a police chief, and his friends must confront terrifying supernatural 
+        	forces in order to get him back.',
+            'image' =>'strangerthings',
+            'length' => 51,
+            'director' =>'Matt Duffer',
+            'num_of_season' => 3,
+            'release_date' => '2016-07-15 00:00:00',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        DB::table('vid_collections')->insert([
+        	'title' => 'When They See Us',
+        	'video_type' => 'TVSHOW',
+        	'language' => 'english',
+        	'rating' => 9.0,
+        	'synopsis' => '2019 American drama web television miniseries',
+            'plot' =>'In 1989 a jogger was assaulted and raped in Central Park, and five young people were subsequently charged with the crime.',
+            'image' =>'whentheyseeus',
+            'length' => 296,
+            'director' =>'Ava Duuvernay',
+            'num_of_season' => 1,
+            'release_date' => '2019-05-31 00:00:00',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        DB::table('vid_collections')->insert([
+        	'title' => 'Narcos',
+        	'video_type' => 'TVSHOW',
+        	'language' => 'spanish',
+        	'rating' => 8.8,
+        	'synopsis' => ' the rise of the cocaine trade in Colombia',
+            'plot' =>'A chronicled look at the criminal exploits of Colombian drug lord
+             Pablo Escobar, as well as the many other drug kingpins who plagued the
+              country through the years.',
+            'image' =>'narcos',
+            'length' => 49,
+            'director' =>'Carlo Bernard',
+            'num_of_season' => 3,
+            'release_date' => '2015-08-28 00:00:00',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        DB::table('vid_collections')->insert([
+        	'title' => 'Avengers Endgame',
+        	'video_type' => 'MOVIES',
+        	'language' => 'ENGLISH',
+        	'rating' => 8.7,
+        	'synopsis' => 'Avengers Endgame',
+            'plot' =>'After the devastating events of Avengers: Infinity War (2018), 
+            the universe is in ruins. With the help of remaining allies, the 
+            Avengers assemble once more in order to reverse Thanos\' actions 
+            and restore balance to the universe.',
+            'image' =>'narcos',
+            'length' => 181,
+            'director' =>'Anthony Russo',
+            'num_of_season' => 0,
+            'release_date' => '2019-04-26 00:00:00',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        DB::table('vid_collections')->insert([
+        	'title' => 'Spider-Man: Far From Home',
+        	'video_type' => 'MOVIES',
+        	'language' => 'ENGLISH',
+        	'rating' => 7.9,
+        	'synopsis' => 'Following the events of Avengers, Spider-Man must step 
+        	up to take on new threats in a world that has changed forever',
+            'plot' =>'After the devastating events of Avengers: Infinity War (2018), 
+            the universe is in ruins. With the help of remaining allies, the 
+            Avengers assemble once more in order to reverse Thanos\' actions 
+            and restore balance to the universe.',
+            'image' =>'spidermanfarfromhome',
+            'length' => 129,
+            'director' =>'John Watts',
+            'num_of_season' => 0,
+            'release_date' => '2019-07-02 00:00:00',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
         ]);
 
 

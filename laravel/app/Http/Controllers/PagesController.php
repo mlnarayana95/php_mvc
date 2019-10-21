@@ -6,13 +6,6 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    public function home()
-    {
-    	$slug = 'home';
-    	$title = 'Funflix - Home Page';
-    	$subtitle = 'Displaying latest tv shows and movies';
-    	return view('home',compact('slug','title','subtitle'));
-    }
 
     public function tvshows()
     {

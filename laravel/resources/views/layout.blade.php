@@ -5,20 +5,20 @@
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:700" rel="stylesheet">
   <title>{{ $title }} </title>
   <link rel="icon" href="images/apple-touch-icon.png" />
-  <link rel="apple-touch-icon" sizes="57x57" href="images/android-chrome-57x57.png" />
-  <link rel="apple-touch-icon" sizes="72x72" href="images/android-chrome-72x72.png" />
-  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png" />
-  <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png" />
-  <link rel="stylesheet" href="styles/desktop.css" />
-  <link rel="stylesheet" href="styles/mobile.css" />
+  <link rel="apple-touch-icon" sizes="57x57" href="/images/android-chrome-57x57.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/android-chrome-72x72.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png" />
+  <link rel="stylesheet" href="/styles/desktop.css" />
+  <link rel="stylesheet" href="/styles/mobile.css" />
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script
   src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
   integrity="sha256-HmfY28yh9v2U4HfIXC+0D6HCdWyZI42qjaiCFEJgpo0="
   crossorigin="anonymous"></script>
-  <script src="js/slick/slick.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css"/>
+  <script src="/js/slick/slick.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/js/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="/js/slick/slick-theme.css"/>
  <script>
  
   $(document).ready(function(){
@@ -101,10 +101,10 @@
   <div id="container">
     <header>
       <span id="logo">
-        <img id="landing_logo" src="images/logo.png" alt="logo">
+        <img id="landing_logo" src="/images/logo.png" alt="logo">
       </span>
       <nav id="navlist">
-        <a id="menu-toggle" href="#navlist"><img src="images/menu-white.png" width="50" height="34" alt="menu toggle" /></a> <!-- starts navigation -->
+        <a id="menu-toggle" href="#navlist"><img src="/images/menu-white.png" width="50" height="34" alt="menu toggle" /></a> <!-- starts navigation -->
         <ul>
           <li class="@if($slug=='home') current @endif"><a href="/">HOME</a></li>
           <li class="@if($slug=='tvshows') current @endif"><a href="/tvshows">TV SHOWS</a></li>

@@ -129,17 +129,17 @@ class vid_collection_seeder extends Seeder
         ]);
 
         DB::table('vid_collections')->insert([
-        	'title' => 'Stranger Things',
+        	'title' => 'When They See Us',
         	'video_type' => 'TVSHOW',
         	'language' => 'english',
-        	'rating' => 8.9,
-        	'synopsis' => 'This thrilling Netflix original drama',
-            'plot' =>'This thrilling Netflix original drama',
-            'image' =>'strangerthings',
-            'length' => 51,
-            'director' =>'Matt Duffer',
-            'num_of_season' => 3,
-            'release_date' => '2016-07-15 00:00:00',
+        	'rating' => 9.0,
+        	'synopsis' => '2019 American drama web television miniseries',
+            'plot' =>'In 1989 a jogger was assaulted and raped in Central Park, and five young people were subsequently charged with the crime.',
+            'image' =>'whentheyseeus',
+            'length' => 296,
+            'director' =>'Ava Duuvernay',
+            'num_of_season' => 1,
+            'release_date' => '2019-05-31 00:00:00',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);

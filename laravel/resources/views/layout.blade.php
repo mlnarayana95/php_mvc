@@ -11,6 +11,56 @@
   <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png" />
   <link rel="stylesheet" href="styles/desktop.css" />
   <link rel="stylesheet" href="styles/mobile.css" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+  integrity="sha256-HmfY28yh9v2U4HfIXC+0D6HCdWyZI42qjaiCFEJgpo0="
+  crossorigin="anonymous"></script>
+  <script src="js/slick/slick.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css"/>
+ <script>
+ 
+  $(document).ready(function(){
+  $('.autoplay').slick({
+  dots: true,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 700,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+
+});
+
+</script>
   <style>
     
   body{

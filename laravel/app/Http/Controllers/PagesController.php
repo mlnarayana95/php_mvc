@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\vid_collection;
 
 class PagesController extends Controller
 {
@@ -10,8 +11,9 @@ class PagesController extends Controller
     {
     	$slug = 'home';
     	$title = 'Funflix - Home Page';
+        $videos = vid_collection::getRecentVideos(); 
     	$subtitle = 'Displaying latest tv shows and movies';
-    	return view('home',compact('slug','title','subtitle'));
+    	return view('home',compact('slug','title','subtitle','videos'));
     }
 
     public function tvshows()

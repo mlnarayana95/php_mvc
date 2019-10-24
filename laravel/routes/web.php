@@ -11,3 +11,7 @@ Route::get('/tvshows', 'PagesController@tvshows');
 Route::get('/movies', 'PagesController@movies');
 
 Route::get('/myprofile', 'PagesController@myprofile');
+
+// Admin Routes
+
+Route::get('/admin/home', 'Admin\AdminVidCollectionController@index');

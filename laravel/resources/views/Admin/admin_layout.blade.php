@@ -43,15 +43,13 @@
             <li class="navigation"><a href="users.php">USERS</a></li>
             <li class="navigation"><a href="genre.php">GENRE</a></li>
             <li class="navigation"><a href="viewlist.php">VIEW LIST</a></li>
-          </ul>
-
-          <li class="nav-item dropdown">
-            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                {{ Auth::user()->name }} <span class="caret"></span>
+            <li class="navigation nav-item dropdown">
+            <a style="padding:0px" id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                {{ Auth::user()->name }} <span></span>
             </a>
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ route('logout') }}"
+                <a style="color:#000;text-shadow: none" class="nav-item" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                  document.getElementById('logout-form').submit();">
                     {{ __('Logout') }}
@@ -63,6 +61,9 @@
             </div>
         </li>
 
+          </ul>
+
+          
       </nav> 
      @endguest
   </header>

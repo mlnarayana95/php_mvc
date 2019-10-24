@@ -22,6 +22,6 @@ class VidCollectionController extends Controller
     	$title = 'Funflix - Home Page';
         $videos = vid_collection::getRecentVideos(); 
     	$subtitle = 'Displaying latest tv shows and movies';
-    	return view('home',compact('slug','title','subtitle','videos'));
+    	return view('Admin.vid_collection',compact('slug','title','subtitle','videos'));
     }
 }

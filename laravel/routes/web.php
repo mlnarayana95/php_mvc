@@ -14,7 +14,7 @@ Route::get('/myprofile', 'PagesController@myprofile');
 
 // Admin Routes
 
-Route::get('/admin/home', 'Admin\AdminVidCollectionController@index')->middleware('auth');
+Route::get('/admin', 'Admin\AdminVidCollectionController@index')->middleware('auth');
 
 Auth::routes();
 

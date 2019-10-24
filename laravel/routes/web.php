@@ -14,4 +14,10 @@ Route::get('/myprofile', 'PagesController@myprofile');
 
 // Admin Routes
 
-Route::get('/admin/home', 'Admin\AdminVidCollectionController@index');
+Route::get('/admin/home', 'Admin\AdminVidCollectionController@index')->middleware('auth');
+
+Auth::routes();
+
+Route::get('logout', 'Auth\LoginController@logout');
+
+Route::get('/home', 'HomeController@index')->name('home');

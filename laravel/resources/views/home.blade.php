@@ -1,28 +1,23 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Dashboard</div>
 
-<main>
-    
-    <div id="wrapper"> 
-              <h2>Recently Released</h2>  
-          <div class="autoplay"> 
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
 
-          @foreach($videos as $video)
-            <div>
-                <a style="color:#fff;" 
-                href="/video/{{ $video['video_id'] }}">
-                <img src="/images/{{ $video['image'] }}.jpg?>" 
-                alt="{{ $video['title'] }}"/>
-                <p style="width:192px">{{ $video['title'] }} </p>
-                </a> 
+                    You are logged in!
+                </div>
             </div>
-
-          @endforeach       
-   
-    </div>      
-
+        </div>
     </div>
-    </main>
-
-@endsection('content')
+</div>
+@endsection

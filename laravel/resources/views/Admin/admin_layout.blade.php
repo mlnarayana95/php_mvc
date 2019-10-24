@@ -26,22 +26,45 @@
           <img id="landing_logo" src="../images/logo.png" alt="logo">
         </span></a>
       </p>
-      <p style="display: inline-block;
-                float: right;
-                margin-right: 13px;
-                margin-top: 26px;">
-        <a href="../login.php?logout=1" class="btn1">Sign Out</a>
-      </p>
-      <nav>
-        <a id="menu-toggle" href="#navlist"><img src="../images/menu-white.png" alt="menu toggle" /></a> <!-- starts navigation -->
-        <ul>
-          <li class="navigation<?=($title=='Funflix Canada - Admin Home') ? ' current' : ''; ?>"><a href="home.php">HOME</a></li>
-          <li class="navigation<?=($title=='Funflix Canada - Admin Video Collection') ? ' current' : ''; ?>"><a href="vidcollection.php">VIDEO COLLECTION</a></li>
-          <li class="navigation<?=($title=='Funflix Canada - Admin Users') ? ' current' : ''; ?>"><a href="users.php">USERS</a></li>
-          <li class="navigation<?=($title=='Funflix Canada - Admin Genre') ? ' current' : ''; ?>"><a href="genre.php">GENRE</a></li>
-          <li class="navigation<?=($title=='Funflix Canada - Admin View list') ? ' current' : ''; ?>"><a href="viewlist.php">VIEW LIST</a></li>
-        </ul>
+
+    @guest
+         <div id="header_button">
+          <a class="btn1" href="{{ route('login') }}">{{ __('Login') }}</a>
+        @if (Route::has('register'))
+          <a class="btn1" href="{{ route('register') }}">{{ __('Register') }}</a>
+           </div>
+        @endif
+        @else
+        <nav>
+          <a id="menu-toggle" href="#navlist"><img src="../images/menu-white.png" alt="menu toggle" /></a> <!-- starts navigation -->
+          <ul>
+            <li class="navigation"><a href="home.php">HOME</a></li>
+            <li class="navigation"><a href="vidcollection.php">VIDEO COLLECTION</a></li>
+            <li class="navigation"><a href="users.php">USERS</a></li>
+            <li class="navigation"><a href="genre.php">GENRE</a></li>
+            <li class="navigation"><a href="viewlist.php">VIEW LIST</a></li>
+          </ul>
+
+          <li class="nav-item dropdown">
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                {{ Auth::user()->name }} <span class="caret"></span>
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                    @csrf
+                </form>
+            </div>
+        </li>
+
       </nav> 
+     @endguest
   </header>
   <div id="container">
   @yield('content')

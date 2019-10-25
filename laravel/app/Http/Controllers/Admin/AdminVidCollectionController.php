@@ -19,7 +19,7 @@ class AdminVidCollectionController extends Controller
         $title = 'Funflix - Admin Home Page';
         $videos = vid_collection::getAllVideos(); 
         $subtitle = 'Displaying latest tv shows and movies';
-        return view('admin.vid_collection',compact('slug','title','subtitle','videos'));
+        return view('admin.vid_collection.index',compact('slug','title','subtitle','videos'));
     }
 
     /**
@@ -51,7 +51,7 @@ class AdminVidCollectionController extends Controller
      */
     public function show($id)
     {
-        //
+        dd('i am in show');
     }
 
     /**
@@ -62,7 +62,9 @@ class AdminVidCollectionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $vid = vid_collection::getVideo($id); 
+        $language_list = ['ENGLISH','SPANISH','HINDI','TELUGU','ARABIC'];
+        return view('admin.vid_collection.edit',compact('vid','language_list'));
     }
 
     /**
@@ -74,7 +76,7 @@ class AdminVidCollectionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        dd('i am in update');
     }
 
     /**
@@ -85,6 +87,9 @@ class AdminVidCollectionController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
+        $video = vid_collection::getVideo($id);
+        $videos = vid_collection::getAllVideos();
+        $video->delete();
+ /*       return('admin.vid_collection.index',compact('videos'));
+ */   }      
 }

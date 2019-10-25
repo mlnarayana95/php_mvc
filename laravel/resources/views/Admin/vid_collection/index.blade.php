@@ -92,16 +92,6 @@
           from { opacity: 0; }
           to   { opacity: 1; }
              }
-
-      .btn{
-        border-radius: 6px;
-        background: #c32625;
-        color: #fff;
-        font-weight: bold;
-        border: 1px solid #5f5353;
-        width: 64px; 
-       }
-      
     
     #wrapper{
         width: 100%;
@@ -120,8 +110,13 @@
     a{
        color: #000;
     }
-     
+
+    form
+    {
+      display: inline-block; 
+    }  
   </style>
+   
 
 
 @endsection('style')
@@ -153,9 +148,12 @@
       <td>{{ $video['video_id'] }} </td>
       <td>{{ $video['title'] }} </td>
       <td>{{ $video['video_type'] }} </td>
-      <td>{{ $video['language'] }} </td>
+      <td>{{ strtoupper($video['language']) }} </td>
       <td>{{ $video['rating'] }} </td>
-      <td><a href="edit.php?video_id={{ $video['video_id'] }} ">Edit</a> | <a href="vidcollection.php?delete={{ $video['video_id'] }} ">Delete</a></td>
+      <td><a class="btn btn-primary" href="/admin/vid_collection/{{ $video['video_id'] }}/edit ">Edit</a> <form action="/admin/vid_collection/{{ $video['video_id'] }}" method="post">
+        @csrf 
+        @method('DELETE')
+        <button style="padding:9px 12px;" class="btn btn-danger">Delete</button></form></td>
       </tr>
     @endforeach
 

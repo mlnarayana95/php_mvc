@@ -23,7 +23,7 @@
   <header style="display: inline-block;">
       <p  style="display: inline-block;float: left;">
         <a href="admin.php"><span id="logo">
-          <img id="landing_logo" src="../images/logo.png" alt="logo">
+          <img id="landing_logo" src="/images/logo.png" alt="logo">
         </span></a>
       </p>
 

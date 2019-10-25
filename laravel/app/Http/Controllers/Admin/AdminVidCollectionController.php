@@ -29,8 +29,10 @@ class AdminVidCollectionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {  
+        $title = 'Funflix - Admin Create Page';
+        $language_list = ['ENGLISH','SPANISH','HINDI','TELUGU','ARABIC'];
+        return view('admin.vid_collection.create',compact('language_list'));
     }
 
     /**
@@ -41,7 +43,38 @@ class AdminVidCollectionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $valid = request()->validate([
+            'title' => 'required',
+            'video_type' => 'required',
+            'language' => 'required',
+            'rating' => 'required',
+            'synopsis' => 'required',
+            'plot' => 'required',
+            'num_of_season' => 'required',
+            'release_date' => 'required',
+            'image' => 'required',
+            'length' => 'required',
+            'director' => 'required'
+
+        ]);
+
+        $video = new vid_collection();
+        $video->title = request('title');
+        $video->video_type = request('video_type');
+        $video->language = request('language');
+        $video->rating = request('rating');
+        $video->synopsis = request('synopsis');
+        $video->plot = request('plot');
+        $video->num_of_season = request('num_of_season');
+        $video->release_date = request('release_date');
+        $video->image = request('image');
+        $video->length = request('length');
+        $video->director = request('director');
+        $video->updated_at = Carbon::now();
+       
+        $video->save();
+         return redirect('/admin/vid_collection')->with('success', 'Video has been added!');
+    
     }
 
     /**
@@ -52,7 +85,7 @@ class AdminVidCollectionController extends Controller
      */
     public function show($id)
     {
-        dd('i am in show');
+        //
     }
 
     /**
@@ -106,7 +139,7 @@ class AdminVidCollectionController extends Controller
         $video->director = request('director');
         $video->updated_at = Carbon::now();
         $video->save();
-        return redirect('/admin/vid_collection')->with('success', 'Video has been modified!');
+        return redirect('/admin/vid_collection')->with('success', "Video with ID $id has been modified!");
     }
 
     /**
@@ -120,6 +153,6 @@ class AdminVidCollectionController extends Controller
         $video = vid_collection::getVideo($id);
         $videos = vid_collection::getAllVideos();
         $video->delete();
- /*       return('admin.vid_collection.index',compact('videos'));
- */   }      
+        return redirect('/admin/vid_collection')->with('success', "Video with ID $id has been deleted successfully!");
+    }      
 }

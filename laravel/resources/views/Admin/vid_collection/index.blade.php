@@ -125,7 +125,7 @@
 @include('partials.flash')
 
   <h2></h2>
-  <a href="addvideo.php" class="btn1" 
+  <a href="/admin/vid_collection/create" class="btn1" 
     style="height: 30px;
            padding: 4px;
            margin-left: 0;

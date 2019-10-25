@@ -16,6 +16,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 // Admin Routes
+// 
+
+
 
 Route::get('/admin/vid_collection', 'Admin\AdminVidCollectionController@index')->middleware('auth');
 

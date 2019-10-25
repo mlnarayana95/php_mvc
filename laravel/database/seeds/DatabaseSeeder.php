@@ -12,5 +12,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(vid_collection_seeder::class);
+        $this->call(seed_users_table::class);
     }
 }

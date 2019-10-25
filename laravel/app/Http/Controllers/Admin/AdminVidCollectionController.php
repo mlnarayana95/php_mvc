@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\vid_collection;
 use \Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class AdminVidCollectionController extends Controller
 {
@@ -14,13 +15,21 @@ class AdminVidCollectionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+        
+    
     public function index()
     {
+      
+     if(Auth::user()->is_admin == 1){
         $slug = 'Admin - home';
         $title = 'Funflix - Admin Home Page';
         $videos = vid_collection::getAllVideos(); 
         $subtitle = 'Displaying latest tv shows and movies';
         return view('admin.vid_collection.index',compact('slug','title','subtitle','videos'));
+    }else{
+        return redirect('/home')->with('error', 'You had to be administrator to view this page');
+    }
+    
     }
 
     /**
@@ -30,9 +39,15 @@ class AdminVidCollectionController extends Controller
      */
     public function create()
     {  
-        $title = 'Funflix - Admin Create Page';
-        $language_list = ['ENGLISH','SPANISH','HINDI','TELUGU','ARABIC'];
-        return view('admin.vid_collection.create',compact('language_list'));
+        if(Auth::user()->is_admin == 1){
+            $title = 'Funflix - Admin Create Page';
+            $language_list = ['ENGLISH','SPANISH','HINDI','TELUGU','ARABIC'];
+            return view('admin.vid_collection.create',compact('language_list'));
+        }
+        else{
+            return redirect('/home')->with('error', 'You had to be administrator to view this page');
+        }
+    
     }
 
     /**
@@ -43,7 +58,9 @@ class AdminVidCollectionController extends Controller
      */
     public function store(Request $request)
     {
-      $valid = request()->validate([
+        if(Auth::user()->is_admin == 1){
+        
+        $valid = request()->validate([
             'title' => 'required',
             'video_type' => 'required',
             'language' => 'required',
@@ -74,6 +91,10 @@ class AdminVidCollectionController extends Controller
        
         $video->save();
          return redirect('/admin/vid_collection')->with('success', 'Video has been added!');
+     }
+         else{
+            return redirect('/home')->with('error', 'You had to be administrator to view this page');
+        }
     
     }
 
@@ -96,9 +117,14 @@ class AdminVidCollectionController extends Controller
      */
     public function edit($id)
     {
+        if(Auth::user()->is_admin == 1){
         $vid = vid_collection::getVideo($id); 
         $language_list = ['ENGLISH','SPANISH','HINDI','TELUGU','ARABIC'];
         return view('admin.vid_collection.edit',compact('vid','language_list'));
+        } else{
+            return redirect('/home')->with('error', 'You had to be administrator to view this page');
+        }
+
     }
 
     /**
@@ -110,6 +136,7 @@ class AdminVidCollectionController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if(Auth::user()->is_admin == 1){
         $valid = request()->validate([
             'title' => 'required',
             'video_type' => 'required',
@@ -140,6 +167,9 @@ class AdminVidCollectionController extends Controller
         $video->updated_at = Carbon::now();
         $video->save();
         return redirect('/admin/vid_collection')->with('success', "Video with ID $id has been modified!");
+        }else{
+            return redirect('/home')->with('error', 'You had to be administrator to view this page');
+        }
     }
 
     /**

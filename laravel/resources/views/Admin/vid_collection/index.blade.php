@@ -122,8 +122,8 @@
 @endsection('style')
 
 @section('content')
-<body>   
-  <div id="container">
+@include('partials.flash')
+
   <h2></h2>
   <a href="addvideo.php" class="btn1" 
     style="height: 30px;
@@ -158,7 +158,5 @@
     @endforeach
 
   </table>
- </div>
- 
-</body>
+
 @endsection('content')

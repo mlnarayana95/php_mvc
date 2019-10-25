@@ -19,6 +19,7 @@ a, a:hover{
 @endsection('style')
 
 @section('content')
+@include('partials.flash')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

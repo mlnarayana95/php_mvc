@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class vid_collection extends Model
 {
+    protected $primaryKey = 'video_id';
+
     public static function getAllVideos()
     {
     	return self::all();

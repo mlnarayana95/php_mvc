@@ -25,10 +25,12 @@ Route::put('/admin/vid_collection/{id}', 'Admin\AdminVidCollectionController@upd
 
 Route::get('/admin/vid_collection/{id}/edit', 'Admin\AdminVidCollectionController@edit')->middleware('auth');
 
+Route::get('/logout', 'Auth\LoginController@logout');
 
+Route::get('/admin/vid_collection/message',function(){
+	 return redirect('/admin/vid_collection')->with('success', 'You have successfully logged in!');
+ 
+})->middleware('auth');
 
 Auth::routes();
-
-Route::get('logout', 'Auth\LoginController@logout');
-
 

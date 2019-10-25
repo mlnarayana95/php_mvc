@@ -54,12 +54,14 @@
 @endsection('style')
 
 @section('content')
-<body>   
-  <div id="container">
+
+    @include('partials.errors')
+
     <h2>Edit a new record</h2>
     <div id="wrapper">
-    <form action="edit.php" method="POST">
+    <form action="/admin/vid_collection/{{$vid->video_id}}" method="POST">
       @csrf()
+      @method('PUT')
     <div class="form-group">
       <input type="text" class="form-control" id="video_id" name="video_id" value="{{$vid->video_id}}" hidden>
     </div>
@@ -148,7 +150,4 @@
 
   </div>
 
-  </div>
- 
-</body>
 @endsection('content')

@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
 use Illuminate\Http\Request;
 
+
 class LoginController extends Controller
 {
     /*
@@ -19,7 +20,6 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
-
     use AuthenticatesUsers;
 
     /**
@@ -27,7 +27,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin/vid_collection';
+    protected $redirectTo = '/admin/vid_collection/message';
+
 
     /**
      * Create a new controller instance.
@@ -41,6 +42,6 @@ class LoginController extends Controller
 
     public function logout(Request $request) {
       Auth::logout();
-      return redirect('/login');
+      return redirect('/login')->with('success', 'You have successfully logged out!');
     }
 }

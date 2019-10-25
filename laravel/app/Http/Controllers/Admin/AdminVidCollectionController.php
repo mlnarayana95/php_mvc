@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\vid_collection;
+use \Carbon\Carbon;
 
 class AdminVidCollectionController extends Controller
 {
@@ -76,7 +77,36 @@ class AdminVidCollectionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd('i am in update');
+        $valid = request()->validate([
+            'title' => 'required',
+            'video_type' => 'required',
+            'language' => 'required',
+            'rating' => 'required',
+            'synopsis' => 'required',
+            'plot' => 'required',
+            'num_of_season' => 'required',
+            'release_date' => 'required',
+            'image' => 'required',
+            'length' => 'required',
+            'director' => 'required'
+
+        ]);
+
+        $video = vid_collection::getVideo($id);
+        $video->title = request('title');
+        $video->video_type = request('video_type');
+        $video->language = request('language');
+        $video->rating = request('rating');
+        $video->synopsis = request('synopsis');
+        $video->plot = request('plot');
+        $video->num_of_season = request('num_of_season');
+        $video->release_date = request('release_date');
+        $video->image = request('image');
+        $video->length = request('length');
+        $video->director = request('director');
+        $video->updated_at = Carbon::now();
+        $video->save();
+        return redirect('/admin/vid_collection')->with('success', 'Video has been modified!');
     }
 
     /**
